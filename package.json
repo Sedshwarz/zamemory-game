@@ -1,0 +1,53 @@
+{
+  "name": "zama-memory-card-game",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fhevm/solidity": "^0.8.0",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@zama-fhe/oracle-solidity": "^0.0.1",
+    "@zama-fhe/relayer-sdk": "^0.2.0",
+    "buffer": "^6.0.3",
+    "dotenv": "^17.2.2",
+    "fhevm-contracts": "^0.2.4",
+    "http-proxy-middleware": "^3.0.5",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start:prod": "npm run build && npx http-server build --port 3000 --set-headers 'Cross-Origin-Opener-Policy: same-origin' --set-headers 'Cross-Origin-Embedder-Policy: require-corp'"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "ethers": "^5.8.0",
+    "hardhat": "^2.22.10"
+  },
+  "type": "module"
+}
