@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Zamemory 🎮🔐
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Zamemory is a **Memory Game** application powered by **Zama FHE (Fully Homomorphic Encryption)** technology.  
+Players’ scores are stored **encrypted on-chain**, and only the player can view their own score.  
 
-## Available Scripts
+## 🚀 Features
+- 🧠 Classic **memory game** gameplay  
+- 🔐 Scores encrypted and stored using **Zama FHE**  
+- 🌐 Smart contract deployed on **Sepolia testnet**  
+- 📊 Players can only view their **own encrypted scores**  
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📦 Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Clone the repository
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+git clone https://github.com/Sedshwarz/zamemory-game.git
+cd zamemory-game
 
-### `npm test`
+2. Install dependencies
+npm install
+3. Set up environment variables
+Create a .env file in the project root and add:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+RPC_URL= # Sepolia RPC URL (Alchemy/Infura etc.)
+PRIVATE_KEY= # Wallet private key for deployment
 
-### `npm run build`
+⚠️ The .env file is ignored with .gitignore. Never commit it to the repo.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+📝 Deploying the Smart Contract
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Compile
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npx hardhat compile
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+Deploy
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npx hardhat run scripts/deploy.js --network sepolia
+Once deployed, the contract address will be printed.
+Update your config.js with it:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+export const CONTRACT_ADDRESS = "0x...";
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🌍 Running the App
 
-### Analyzing the Bundle Size
+Development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+npm start
 
-### Making a Progressive Web App
+By default, the app runs at http://localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm run build
+npx http-server -p 5000 build
+Then open http://localhost:5000.
 
-### Deployment
+⚡ Tech Stack
+React
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Hardhat
 
-### `npm run build` fails to minify
+Ethers.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Zama FHE SDK
+
+📜 License
+This project is licensed under the MIT License.
