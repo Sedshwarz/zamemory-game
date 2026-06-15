@@ -8,7 +8,7 @@ module.exports = function(app) {
       changeOrigin: true,
       secure: true,
       pathRewrite: {
-        '^/relayer': '' // baştaki /relayer kısmını kaldır
+        '^/relayer': ''
       }
     })
   );
